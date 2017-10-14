@@ -21,6 +21,10 @@ public class Main {
 	
 
         Player player = new Player(name, 100);
+	System.out.println(“Enter your age”);
+	int age = scan.nextInt();
+	if(age>= 18){
+	
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
@@ -31,7 +35,10 @@ public class Main {
         {
             int winCount = 0;
             int loseCount = 0;
-            
+            System.out.println(“Enter your bet”);
+	Scanner input = new scanner(System.in);
+	int bet = input.nextInt();
+
             for (int i = 0; i < 100; i++)
             {
             	String name = "Fred";
@@ -39,7 +46,6 @@ public class Main {
             	int limit = 0;
                 player = new Player(name, balance);
                 player.setLimit(limit);
-                int bet = 5;
 
                 System.out.println(String.format("Start Game %d: ", i));
                 System.out.println(String.format("%s starts with balance %d, limit %d", 
@@ -88,6 +94,11 @@ public class Main {
         
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
 	}
+	else
+	System.out.println(“You are not allowed to play this game as you are under 18”);
+	}
+	else
+	System.out.println(“Thank You”)
 
 }
 }
