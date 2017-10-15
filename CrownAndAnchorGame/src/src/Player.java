@@ -23,11 +23,11 @@ public class Player {
 	}
 
 	public boolean balanceExceedsLimit() {
-		return (balance > limit);
+		return (balance >= limit);
 	}
 	
 	public boolean balanceExceedsLimitBy(int amount) {
-		return (balance - amount > limit);
+		return (balance - amount >= limit);
 	}
 	
 	public void takeBet(int bet) {
@@ -38,7 +38,7 @@ public class Player {
 	
 	public void receiveWinnings(int winnings) {
 		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
-		balance = balance + winnings;		
+		balance = balance + winnings + bet;		
 	}
 	
 	public String toString() {
