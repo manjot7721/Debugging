@@ -10,8 +10,16 @@ public class Main {
         Dice d1 = new Dice();
         Dice d2 = new Dice();
         Dice d3 = new Dice();
+Scanner scan = new scanner(System.in);
+System.out.println("Welcome to crown and anchor game");
+System.out.println("Do you want to start the game? enter 0 for yes and 1 for no");
+int choice = scan.nextInt();
+if(choice==0){
+System.out.println("Enter name of player");
+String name = scannext();
 
-        Player player = new Player("Fred", 100);
+
+        Player player = new Player("name", 100);
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
@@ -79,5 +87,12 @@ public class Main {
         
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
 	}
+else
+System.out.println("You are not allowed to play this game as you are under 18");
+}
+else
+System.out.println("Thank You");
 
+
+}
 }
